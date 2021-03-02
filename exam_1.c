@@ -11,6 +11,12 @@ README
     3.  is_big_endian()
     4.  is_little_endian()
 
+    I found the function which can print the bits of any number in
+    the internet which is from
+    "https://www.geeksforgeeks.org/binary-representation-of-a-given-number/" ,
+    so i will use it to easily represents the bits of each number in this testing.
+    ( The function name is bin() ).
+
     And thanks
     "https://open4tech.com/wp-content/uploads/2020/05/little_endian_vs_big_endian.png"
     for a little endian and big endian comaparison picture which makes me more clear 
@@ -19,6 +25,13 @@ README
     author: Nutchanon C. 6210503578;
 */
 
+/* Extra function (external) */
+void bin(int n) {
+    unsigned i;
+    for (i = 1 << 31; i > 0; i = i / 2)
+        (n & i) ? printf("1") : printf("0");
+    printf("\n");
+}
 
 
 int is_signed_two_complement() {
